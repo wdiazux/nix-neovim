@@ -19,11 +19,6 @@
 
     lsp = {
       servers = {
-        eslint = {
-          capabilities = {
-            # documentFormattingProvider = false;
-          };
-        };
         tsserver = {
           capabilities = {
             documentFormattingProvider = false;
