@@ -1,0 +1,243 @@
+{
+  lib,
+  pkgs,
+  config,
+  ...
+}:
+with lib.plusultra;
+with lib.plusultra.theme.gruvbox; let
+  bufferline-buffer-text = light1;
+  bufferline-buffer-background = dark1;
+  bufferline-buffer-focus-text = light2;
+  bufferline-buffer-focus-background = dark3;
+in {
+  extraPlugins = with pkgs.vimPlugins; [
+    vim-bufkill
+  ];
+
+  globals = {
+    BufKillCreateMappings = 0;
+  };
+
+  keymaps = [
+    {
+      mode = "n";
+      key = "gb";
+      action = "<cmd>:BufferLinePick<cr>";
+      options = {
+        silent = true;
+        desc = "Go to buffer";
+      };
+    }
+    {
+      mode = "n";
+      key = "<leader>bd";
+      action = "<cmd>:BD<cr>";
+      options = {
+        silent = true;
+        desc = "Delete buffer";
+      };
+    }
+    {
+      mode = "n";
+      key = "<leader>bn";
+      action = "<cmd>:bnext<cr>";
+      options = {
+        silent = true;
+        desc = "Next buffer";
+      };
+    }
+    {
+      mode = "n";
+      key = "<leader>bp";
+      action = "<cmd>:bprevious<cr>";
+      options = {
+        silent = true;
+        desc = "Previous buffer";
+      };
+    }
+  ];
+
+  plugins = {
+    bufferline = {
+      enable = false;
+      mode = "buffers";
+      persistBufferSort = true;
+      alwaysShowBufferline = true;
+      separatorStyle = "slant";
+      diagnosticsUpdateInInsert = true;
+
+      showCloseIcon = false;
+      showBufferIcons = false;
+      showBufferCloseIcons = false;
+
+      offsets = [
+        {
+          filetype = "NvimTree";
+          text = "NvimTree";
+          highlight = "Directory";
+          textAlign = "left";
+        }
+      ];
+
+      diagnostics = "nvim_lsp";
+      diagnosticsIndicator = ''
+        function(_, _, diagnostic)
+          local signs = { error = " ", warning = " ", hint = " ", info = " " }
+          local severities = { "error", "warning" }
+          local strs = {}
+          for _, severity in ipairs(severities) do
+            if diagnostic[severity] then
+              table.insert(strs, signs[severity] .. diagnostic[severity])
+            end
+          end
+
+          return table.concat(strs, " ")
+        end
+      '';
+
+      # Show highlights with `:Telescope highlights`
+      highlights = {
+        background = {
+          fg = bufferline-buffer-text;
+          bg = bufferline-buffer-background;
+        };
+        fill = {
+          bg = dark0;
+        };
+        tab = {
+          fg = bufferline-buffer-text;
+          bg = bufferline-buffer-background;
+        };
+        tabSelected = {
+          fg = bufferline-buffer-focus-text;
+          bg = bufferline-buffer-focus-background;
+        };
+        info = {
+          fg = bufferline-buffer-text;
+          bg = bufferline-buffer-background;
+        };
+        pick = {
+          fg = bufferline-buffer-text;
+          bg = bufferline-buffer-background;
+        };
+        error = {
+          fg = bufferline-buffer-text;
+          bg = bufferline-buffer-background;
+        };
+        errorVisible = {
+          fg = bufferline-buffer-focus-text;
+          bg = bufferline-buffer-focus-background;
+        };
+        errorSelected = {
+          fg = bufferline-buffer-focus-text;
+          bg = bufferline-buffer-focus-background;
+        };
+        bufferVisible = {
+          fg = bufferline-buffer-text;
+          bg = bufferline-buffer-background;
+        };
+        bufferSelected = {
+          fg = bufferline-buffer-focus-text;
+          bg = bufferline-buffer-focus-background;
+        };
+        hint = {
+          fg = bufferline-buffer-text;
+          bg = bufferline-buffer-background;
+        };
+        hintSelected = {
+          fg = bufferline-buffer-focus-text;
+          bg = bufferline-buffer-focus-background;
+        };
+        warning = {
+          fg = bufferline-buffer-text;
+          bg = bufferline-buffer-background;
+        };
+        warningSelected = {
+          fg = bufferline-buffer-focus-text;
+          bg = bufferline-buffer-focus-background;
+        };
+        modified = {
+          fg = bufferline-buffer-text;
+          bg = bufferline-buffer-background;
+        };
+        modifiedVisible = {
+          fg = bufferline-buffer-text;
+          bg = bufferline-buffer-background;
+        };
+        modifiedSelected = {
+          fg = bufferline-buffer-focus-text;
+          bg = bufferline-buffer-focus-background;
+        };
+        tabClose = {
+          fg = bufferline-buffer-text;
+          bg = bufferline-buffer-background;
+        };
+        duplicate = {
+          fg = bufferline-buffer-text;
+          bg = bufferline-buffer-background;
+        };
+        duplicateSelected = {
+          fg = bufferline-buffer-focus-text;
+          bg = bufferline-buffer-focus-background;
+        };
+        separator = {
+          fg = dark0;
+          bg = bufferline-buffer-background;
+        };
+        separatorVisible = {
+          fg = dark0;
+          bg = bufferline-buffer-background;
+        };
+        separatorSelected = {
+          fg = dark0;
+          bg = bufferline-buffer-focus-background;
+        };
+        diagnostic = {
+          fg = bufferline-buffer-text;
+          bg = bufferline-buffer-background;
+        };
+        diagnosticVisible = {
+          fg = bufferline-buffer-text;
+          bg = bufferline-buffer-background;
+        };
+        diagnosticSelected = {
+          fg = bufferline-buffer-focus-text;
+          bg = bufferline-buffer-focus-background;
+        };
+        closeButton = {
+          fg = bufferline-buffer-text;
+          bg = bufferline-buffer-background;
+        };
+        infoDiagnostic = {
+          fg = bufferline-buffer-text;
+          bg = bufferline-buffer-background;
+        };
+        errorDiagnostic = {
+          fg = bufferline-buffer-text;
+          bg = bufferline-buffer-background;
+        };
+        errorDiagnosticVisible = {
+          fg = bufferline-buffer-text;
+          bg = bufferline-buffer-background;
+        };
+        errorDiagnosticSelected = {
+          fg = bufferline-buffer-focus-text;
+          bg = bufferline-buffer-focus-background;
+        };
+        warningDiagnostic = {
+          fg = bufferline-buffer-text;
+          bg = bufferline-buffer-background;
+        };
+        tabSeparator = {
+          fg = dark0;
+          bg = bufferline-buffer-background;
+        };
+        tabSeparatorSelected = {
+          fg = dark0;
+          bg = bufferline-buffer-background;
+        };
+      };
+    };
+  };
+}
