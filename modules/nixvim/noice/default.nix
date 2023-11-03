@@ -3,28 +3,28 @@ with lib.plusultra;
 with lib.plusultra.theme.nord; {
   highlight = {
     NormalFloat = {
-      fg = light2;
-      bg = dark0;
+      fg = nord6;
+      bg = nord0;
     };
     FloatBorder = {
-      fg = light2;
-      bg = dark0;
+      fg = nord6;
+      bg = nord0;
     };
 
     NoiceCmdlinePopupBorderSearch = {
-      fg = bright_yellow;
+      fg = nord10;
     };
     NoiceCmdlineIconSearch = {
-      fg = bright_yellow;
+      fg = nord10;
     };
 
     NoicePopupMenu = {
-      fg = light2;
-      bg = dark0;
+      fg = nord6;
+      bg = nord0;
     };
     NoicePopupMenuBorder = {
-      fg = light2;
-      bg = dark0;
+      fg = nord6;
+      bg = nord0;
     };
   };
 
