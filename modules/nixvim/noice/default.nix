@@ -1,6 +1,6 @@
 {lib, ...}:
 with lib.plusultra;
-with lib.plusultra.theme.gruvbox; {
+with lib.plusultra.theme.nord; {
   highlight = {
     NormalFloat = {
       fg = light2;

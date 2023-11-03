@@ -5,7 +5,7 @@
   ...
 }:
 with lib.plusultra;
-with theme.gruvbox; {
+with theme.nord; {
   config = {
     extraConfigLua = ''
       do

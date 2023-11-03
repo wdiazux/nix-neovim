@@ -5,11 +5,11 @@
   ...
 }:
 with lib.plusultra;
-with lib.plusultra.theme.gruvbox; let
-  bufferline-buffer-text = light1;
-  bufferline-buffer-background = dark1;
-  bufferline-buffer-focus-text = light2;
-  bufferline-buffer-focus-background = dark3;
+with lib.plusultra.theme.nord; let
+  bufferline-buffer-text = nord6;
+  bufferline-buffer-background = nord1;
+  bufferline-buffer-focus-text = nord6;
+  bufferline-buffer-focus-background = nord3;
 in {
   extraPlugins = with pkgs.vimPlugins; [
     vim-bufkill
@@ -103,7 +103,7 @@ in {
           bg = bufferline-buffer-background;
         };
         fill = {
-          bg = dark0;
+          bg = nord0;
         };
         tab = {
           fg = bufferline-buffer-text;
@@ -182,15 +182,15 @@ in {
           bg = bufferline-buffer-focus-background;
         };
         separator = {
-          fg = dark0;
+          fg = nord0;
           bg = bufferline-buffer-background;
         };
         separatorVisible = {
-          fg = dark0;
+          fg = nord0;
           bg = bufferline-buffer-background;
         };
         separatorSelected = {
-          fg = dark0;
+          fg = nord0;
           bg = bufferline-buffer-focus-background;
         };
         diagnostic = {
@@ -230,11 +230,11 @@ in {
           bg = bufferline-buffer-background;
         };
         tabSeparator = {
-          fg = dark0;
+          fg = nord0;
           bg = bufferline-buffer-background;
         };
         tabSeparatorSelected = {
-          fg = dark0;
+          fg = nord0;
           bg = bufferline-buffer-background;
         };
       };

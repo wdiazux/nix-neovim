@@ -1,5 +1,5 @@
 {lib, ...}:
-with lib.plusultra.theme.gruvbox; {
+with lib.plusultra.theme.nord; {
   plugins = {
     todo-comments = {
       enable = true;
@@ -38,12 +38,12 @@ with lib.plusultra.theme.gruvbox; {
         };
       };
       colors = {
-        error = [bright_blue];
-        warning = [neutral_red];
-        info = [neutral_blue];
-        hint = [bright_green];
-        todo = [light2];
-        default = [light2];
+        error = [nord11];
+        warning = [nord12];
+        info = [nord15];
+        hint = [nord10];
+        todo = [nord6];
+        default = [nord6];
       };
       highlight = {
         multiline = true;
