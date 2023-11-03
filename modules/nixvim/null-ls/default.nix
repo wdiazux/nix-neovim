@@ -16,15 +16,5 @@
 
       sources.formatting.prettier.enable = true;
     };
-
-    lsp = {
-      servers = {
-        tsserver = {
-          capabilities = {
-            documentFormattingProvider = false;
-          };
-        };
-      };
-    };
   };
 }

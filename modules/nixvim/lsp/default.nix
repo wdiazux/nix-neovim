@@ -86,7 +86,7 @@ with lib.plusultra; {
         lua-ls.enable = true;
         pyright.enable = true;
         rust-analyzer.enable = true;
-          tsserver = {
+        tsserver = {
           enable = true;
 
           extraOptions = {

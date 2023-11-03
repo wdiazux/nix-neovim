@@ -1,11 +1,11 @@
 {...}: {
-   plugins = {
-     notify = {
-       enable = true;
+  plugins = {
+    notify = {
+      enable = true;
 
-       level = 2;
-       topDown = false;
-       maxWidth = 400;
-     };
-   };
- }
+      level = 2;
+      topDown = false;
+      maxWidth = 400;
+    };
+  };
+}

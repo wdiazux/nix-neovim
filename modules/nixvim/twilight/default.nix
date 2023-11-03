@@ -9,7 +9,10 @@ with lib.plusultra; {
   ];
 
   extraConfigLua =
-    /* lua */ ''
+    /*
+    lua
+    */
+    ''
       require("twilight").setup({})
 
       require("which-key").register({
