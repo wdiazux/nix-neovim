@@ -58,7 +58,6 @@ with lib.plusultra.theme.nord; {
 
       theme = "hyper";
       disableMove = true;
-      changeToVcsRoot = true;
 
       packages.enable = false;
       week_header.enable = false;
