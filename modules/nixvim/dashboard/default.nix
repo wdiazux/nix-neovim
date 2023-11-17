@@ -57,10 +57,9 @@ with lib.plusultra.theme.nord; {
       enable = true;
 
       theme = "hyper";
-      disableMove = true;
 
       packages.enable = false;
-      week_header.enable = false;
+      #week_header.enable = false;
 
       hide = {
         statusline = true;
